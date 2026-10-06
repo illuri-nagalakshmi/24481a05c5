@@ -1,0 +1,468 @@
+<!DOCTYPE html> <html lang="en"> <head> <meta charset="UTF-8"> <meta name="viewport" content="width=device-width, initial-scale=1.0"> <title>My Portfolio</title>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        font-family: Arial, sans-serif;
+        background: #f4f7fb;
+        color: #222;
+    }
+
+    header {
+        background: #2563eb;
+        color: white;
+        padding: 18px 8%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    header h2 {
+        font-size: 25px;
+    }
+
+    nav a {
+        color: white;
+        text-decoration: none;
+        margin-left: 20px;
+        font-weight: bold;
+    }
+
+    nav a:hover {
+        color: #fde047;
+    }
+
+    .hero {
+        min-height: 70vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        background: white;
+        padding: 40px 20px;
+    }
+
+    .hero h1 {
+        font-size: 48px;
+        color: #1e293b;
+        margin-bottom: 10px;
+    }
+
+    .hero h1 span {
+        color: #2563eb;
+    }
+
+    .hero h3 {
+        color: #64748b;
+        font-size: 25px;
+        margin-bottom: 20px;
+    }
+
+    .hero p {
+        max-width: 650px;
+        color: #64748b;
+        font-size: 18px;
+        margin: auto auto 25px;
+    }
+
+    .btn {
+        display: inline-block;
+        padding: 12px 25px;
+        background: #2563eb;
+        color: white;
+        text-decoration: none;
+        border: 0;
+        border-radius: 7px;
+        cursor: pointer;
+        font-weight: bold;
+    }
+
+    .btn:hover {
+        background: #1d4ed8;
+    }
+
+    section {
+        padding: 60px 8%;
+    }
+
+    .title {
+        text-align: center;
+        margin-bottom: 35px;
+    }
+
+    .title h2 {
+        font-size: 35px;
+        color: #1e293b;
+    }
+
+    .title p {
+        color: #64748b;
+        margin-top: 8px;
+    }
+
+    .about {
+        background: #eef4ff;
+    }
+
+    .cards {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 25px;
+    }
+
+    .card {
+        background: white;
+        padding: 25px;
+        border-radius: 12px;
+        box-shadow: 0 3px 15px #0001;
+    }
+
+    .card h3 {
+        color: #2563eb;
+        margin-bottom: 12px;
+    }
+
+    .card p {
+        color: #64748b;
+        line-height: 1.7;
+    }
+
+    .skills {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin-top: 15px;
+    }
+
+    .skill {
+        background: #dbeafe;
+        color: #1d4ed8;
+        padding: 8px 14px;
+        border-radius: 20px;
+        font-weight: bold;
+    }
+
+    .projects {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+    }
+
+    .project {
+        background: white;
+        padding: 25px;
+        border-radius: 12px;
+        box-shadow: 0 3px 15px #0001;
+    }
+
+    .project h3 {
+        color: #2563eb;
+        margin-bottom: 10px;
+    }
+
+    .project p {
+        color: #64748b;
+        line-height: 1.6;
+    }
+
+    .contact {
+        background: #eef4ff;
+    }
+
+    .form-box {
+        max-width: 650px;
+        margin: auto;
+        background: white;
+        padding: 30px;
+        border-radius: 12px;
+        box-shadow: 0 3px 15px #0001;
+    }
+
+    label {
+        display: block;
+        margin-bottom: 6px;
+        font-weight: bold;
+        color: #334155;
+    }
+
+    input,
+    textarea {
+        width: 100%;
+        padding: 12px;
+        margin-bottom: 16px;
+        border: 1px solid #cbd5e1;
+        border-radius: 6px;
+        font-size: 15px;
+    }
+
+    textarea {
+        height: 120px;
+        resize: vertical;
+    }
+
+    input:focus,
+    textarea:focus {
+        outline: none;
+        border-color: #2563eb;
+    }
+
+    .result {
+        margin-top: 25px;
+        padding: 20px;
+        background: #ecfdf5;
+        border: 1px solid #10b981;
+        border-radius: 8px;
+    }
+
+    .result h3 {
+        color: #047857;
+        margin-bottom: 10px;
+    }
+
+    .result p {
+        margin: 6px 0;
+        color: #334155;
+    }
+
+    footer {
+        text-align: center;
+        background: #1e293b;
+        color: white;
+        padding: 25px;
+    }
+
+    footer p {
+        color: #cbd5e1;
+        margin: 5px;
+    }
+
+    @media (max-width: 750px) {
+        header {
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        nav a {
+            margin: 0 7px;
+        }
+
+        .hero h1 {
+            font-size: 36px;
+        }
+
+        .cards,
+        .projects {
+            grid-template-columns: 1fr;
+        }
+    }
+</style>
+
+</head> <body> <header> <h2>My Portfolio</h2>
+<nav>
+    <a href="/">Home</a>
+    <a href="#about">About</a>
+    <a href="#projects">Projects</a>
+    <a href="#contact">Contact</a>
+</nav>
+
+</header> <section class="hero">
+<div>
+    <h1>Hello, I'm <span>Nagalakshmi</span></h1>
+
+    <h3>Python & Flask Developer</h3>
+
+    <p>
+        Welcome to my portfolio. I am a passionate developer
+        who enjoys creating websites and web applications
+        using Python, Flask, HTML and CSS.
+    </p>
+
+    <a href="#contact" class="btn">Contact Me</a>
+</div>
+
+</section> <section class="about" id="about">
+<div class="title">
+    <h2>About Me</h2>
+    <p>Learn more about me and my skills</p>
+</div>
+
+<div class="cards">
+
+    <div class="card">
+        <h3>Who I Am</h3>
+
+        <p>
+            I am an aspiring software developer interested
+            in web development. I enjoy learning new
+            technologies and building useful applications.
+        </p>
+
+        <p>
+            My main interests are Python, Flask,
+            frontend development and databases.
+        </p>
+    </div>
+
+    <div class="card">
+        <h3>My Skills</h3>
+
+        <div class="skills">
+            <span class="skill">Python</span>
+            <span class="skill">Flask</span>
+            <span class="skill">HTML</span>
+            <span class="skill">CSS</span>
+            <span class="skill">JavaScript</span>
+            <span class="skill">SQL</span>
+            <span class="skill">Git</span>
+            <span class="skill">REST API</span>
+        </div>
+    </div>
+
+</div>
+
+</section> <section id="projects">
+<div class="title">
+    <h2>My Projects</h2>
+    <p>Some projects I have worked on</p>
+</div>
+
+<div class="projects">
+
+    <div class="project">
+        <h3>Portfolio Website</h3>
+        <p>
+            A responsive personal portfolio created
+            using Flask, HTML and CSS.
+        </p>
+    </div>
+
+    <div class="project">
+        <h3>Student Management</h3>
+        <p>
+            A web application for managing student
+            information using Python and Flask.
+        </p>
+    </div>
+
+    <div class="project">
+        <h3>To-Do Application</h3>
+        <p>
+            A simple task management application
+            for creating and organizing tasks.
+        </p>
+    </div>
+
+    <div class="project">
+        <h3>Weather Application</h3>
+        <p>
+            A weather application that displays
+            weather information using an API.
+        </p>
+    </div>
+
+    <div class="project">
+        <h3>Blog Website</h3>
+        <p>
+            A basic blog website where users can
+            read and publish articles.
+        </p>
+    </div>
+
+    <div class="project">
+        <h3>Login System</h3>
+        <p>
+            A simple login and registration system
+            created with Flask and HTML forms.
+        </p>
+    </div>
+
+</div>
+
+</section> <section class="contact" id="contact">
+<div class="title">
+    <h2>Contact Me</h2>
+    <p>Send me a message</p>
+</div>
+
+<div class="form-box">
+
+    <form action="/user" method="POST">
+
+        <label for="name">Name</label>
+        <input
+            type="text"
+            id="name"
+            name="name"
+            placeholder="Enter your name"
+            required
+        >
+
+        <label for="email">Email</label>
+        <input
+            type="email"
+            id="email"
+            name="email"
+            placeholder="Enter your email"
+            required
+        >
+
+        <label for="phone">Phone</label>
+        <input
+            type="text"
+            id="phone"
+            name="phone"
+            placeholder="Enter your phone number"
+        >
+
+        <label for="message">Message</label>
+        <textarea
+            id="message"
+            name="message"
+            placeholder="Enter your message"
+            required
+        ></textarea>
+
+        <button class="btn" type="submit">
+            Submit
+        </button>
+
+    </form>
+
+
+    {% if data %}
+
+    <div class="result">
+
+        <h3>Submitted Successfully!</h3>
+
+        <p>
+            <strong>Name:</strong>
+            {{ data.get('name') }}
+        </p>
+
+        <p>
+            <strong>Email:</strong>
+            {{ data.get('email') }}
+        </p>
+
+        <p>
+            <strong>Phone:</strong>
+            {{ data.get('phone') }}
+        </p>
+
+        <p>
+            <strong>Message:</strong>
+            {{ data.get('message') }}
+        </p>
+
+    </div>
+
+    {% endif %}
+
+</div>
+
+</section> <footer> <p>My Portfolio</p> <p>Built with Python & Flask</p> <p>&copy; 2026 All Rights Reserved</p> </footer> </body> </html>
